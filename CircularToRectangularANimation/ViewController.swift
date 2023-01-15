@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Circular to Rectangular Animation"
         label.font = UIFont(name: "Avenir Next Demi Bold", size: 18)
+        label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
         label.sizeToFit()
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Using UIKit"
         label.font = UIFont(name: "Avenir Next Demi Bold", size: 10)
+        label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
         label.sizeToFit()
