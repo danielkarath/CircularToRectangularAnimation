@@ -149,10 +149,11 @@ class ViewController: UIViewController {
             subTitleLabel.heightAnchor.constraint(equalToConstant: 20),
             subTitleLabel.widthAnchor.constraint(equalToConstant: 220),
             
-            startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             startButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            startButton.widthAnchor.constraint(equalToConstant: 140),
-            startButton.heightAnchor.constraint(equalToConstant: 40),
+            startButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -32),
+            startButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 32),
+            startButton.heightAnchor.constraint(equalToConstant: 50),
             
             circleView1.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             circleView1.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
@@ -230,12 +231,6 @@ class ViewController: UIViewController {
                 let delay: TimeInterval = TimeInterval(i)
                 UIView.animate(withDuration: 2.0, delay: (delay)/delayDivider, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
                     let size: CGFloat = sizes[i]
-                    if i != 0 {
-                        rotationAngle = degrees90 + CGFloat(i) * 0.05
-                    } else {
-                        rotationAngle = degrees90
-                    }
-                    print("rotationAngle: \(rotationAngle)")
                     circleView.transform = CGAffineTransform.identity
                     circleView.layer.cornerRadius = size / 2
                     i = i + 1
@@ -245,16 +240,16 @@ class ViewController: UIViewController {
             self.didRotate = true
             for circleView in circleViews {
                 let delay: TimeInterval = TimeInterval(i)
-                UIView.animate(withDuration: 2.0, delay: (delay)/delayDivider, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+                UIView.animate(withDuration: 2.0, delay: (delay)/delayDivider, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.75, options: .curveEaseInOut) {
                     let size: CGFloat = sizes[i]
                     if i != 0 {
-                        rotationAngle = degrees90 - CGFloat(i) * 0.05
+                        rotationAngle = degrees90 - CGFloat(i) * 0.185
                     } else {
                         rotationAngle = degrees90
                     }
                     print("rotationAngle: \(rotationAngle)")
-                    circleView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-                    circleView.layer.cornerRadius = size / 8
+                    circleView.transform = CGAffineTransform(rotationAngle: -rotationAngle)
+                    circleView.layer.cornerRadius = size / 9
                     i = i + 1
                 }
             }
