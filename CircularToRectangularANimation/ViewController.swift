@@ -240,7 +240,7 @@ class ViewController: UIViewController {
             self.didRotate = true
             for circleView in circleViews {
                 let delay: TimeInterval = TimeInterval(i)
-                UIView.animate(withDuration: 2.0, delay: (delay)/delayDivider, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.75, options: .curveEaseInOut) {
+                UIView.animate(withDuration: 2.0, delay: (delay)/delayDivider, usingSpringWithDamping: 0.50, initialSpringVelocity: 0.50, options: .curveEaseInOut) {
                     let size: CGFloat = sizes[i]
                     if i != 0 {
                         rotationAngle = degrees90 - CGFloat(i) * 0.185
